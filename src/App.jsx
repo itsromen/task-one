@@ -8,6 +8,7 @@ import clinic from "./assets/clinic-history-orange.png";
 import clinic2 from "./assets/clinic.png";
 import clinic3 from "./assets/clinic1.png";
 import clinic4 from "./assets/clinic2.png";
+import arrow from "./assets/right-arrow.png";
 
 function Navbar() {
   return (
@@ -200,12 +201,93 @@ function Services() {
   );
 }
 
+function ContactInfo() {
+  return (
+    <div className="flex-auto text-center flex flex-col items-center">
+      <h1 className="text-[3rem] font-medium mb-12 uppercase leading-none">
+        Contact
+      </h1>
+      <p className="w-[60ch] text-[#adaaaa]">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+        exercitationem cupiditate harum officia distinctio a, accusamus voluptas
+        quisquam. Nostrum tenetur laborum eaque ipsam ab iure. Doloribus, cum.
+        Quia, velit sit!
+      </p>
+      <h2 className="text-[1.5rem] font-medium mt-8">Address</h2>
+      <p className="text-[#adaaaa]">1489 Walkers Ridge Way</p>
+      <h2 className="text-[1.5rem] font-medium mt-4">Phone</h2>
+      <p className="text-[#adaaaa]">+964 0750 735 3950</p>
+      <h2 className="text-[1.5rem] font-medium mt-4">E-mail</h2>
+      <p className="text-[#adaaaa]">romen.dinha@gmail.com</p>
+    </div>
+  );
+}
+
+function CreateInput(props) {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  };
+
+  return (
+    <form className="flex flex-col gap-2" onSubmit={handleSubmit}>
+      {props.inputs.map((input) => {
+        return (
+          <input
+            type={input.type}
+            name={input.name}
+            placeholder={input.placeholder}
+            className="border-b border-[#635c5c] py-4"
+          />
+        );
+      })}
+      <button
+        type="submit"
+        className="mt-12 w-[50%] rounded-md py-4 self-center shadow-[15px_9px_-1px_1px_rgba(0,0,0,0.7)]"
+      >
+        Send Message &#8594;
+      </button>
+    </form>
+  );
+}
+
+function ContactForm() {
+  const inputs = [
+    { type: "text", name: "name", placeholder: "Your name" },
+    { type: "tel", name: "phone", placeholder: "Your phone" },
+    { type: "email", name: "email", placeholder: "Your e-mail" },
+    { type: "text", name: "message", placeholder: "Message" },
+  ];
+
+  return (
+    <div className="flex-auto px-12 py-12 text-center shadow-[-1px_9px_15px_1px_rgba(0,0,0,0.7)]">
+      <h1 className="text-[3rem] font-medium mb-12 uppercase leading-none">
+        Contact Form
+      </h1>
+      <CreateInput inputs={inputs} />
+    </div>
+  );
+}
+
+function Contact() {
+  return (
+    <section className="relative text-white/80  h-screen snap-start bg-[radial-gradient(circle_at_35%_25%,#505050_0%,#505050_5%,#141414_60%,black_100%)]">
+      <Navbar />
+      <div className="px-32 w-[100%] flex gap-32 items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+        <ContactInfo />
+        <ContactForm />
+      </div>
+      <Socials />
+    </section>
+  );
+}
+
 export default function App() {
   return (
     <div className="h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
       <Header />
       <Solutions />
       <Services />
+      <Contact />
     </div>
   );
 }
