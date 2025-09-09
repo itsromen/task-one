@@ -2,7 +2,12 @@ import logo from "./assets/firefox.png";
 import facebook from "./assets/facebook-app-symbol.png";
 import twitter from "./assets/twitter.png";
 import linkedin from "./assets/linkedin-logo.png";
-import broski from "./assets/young-people-holding-smartphones.png";
+import man_chatting from "./assets/young-people-holding-smartphones.png";
+import backgroundServices from "./assets/orangebg.jpg";
+import clinic from "./assets/clinic-history-orange.png";
+import clinic2 from "./assets/clinic.png";
+import clinic3 from "./assets/clinic1.png";
+import clinic4 from "./assets/clinic2.png";
 
 function Navbar() {
   return (
@@ -116,10 +121,82 @@ function SolutionsInfo() {
 
 function Solutions() {
   return (
-    <div className="h-screen snap-start bg-[#faeee1] flex items-center justify-center">
-      <img src={broski} alt="random dude" width="40%" />
+    <section className="h-screen snap-start bg-[#faeee1] flex items-center justify-center">
+      <img src={man_chatting} alt="random dude" width="40%" />
       <SolutionsInfo />
+    </section>
+  );
+}
+
+function ListServices(props) {
+  return (
+    <div className="cardsContainer flex w-[80%] gap-16 justify-center relative bottom-32">
+      {props.servicesList.map((service) => {
+        return (
+          <div className="card flex flex-col gap-4 w-[30ch] py-8 px-12 shadow-xl bg-white/95 rounded-4xl">
+            <img
+              src={service.logo}
+              alt={`${service.title} Image`}
+              width="48px;"
+            />
+            <h3 className="font-medium">{service.title}</h3>
+            <p className="text-[#adaaaa]">{service.description}</p>
+          </div>
+        );
+      })}
     </div>
+  );
+}
+
+function Services() {
+  const servicesList = [
+    {
+      logo: clinic,
+      title: "Neurmlog Clinic",
+      description:
+        "In this program, you are trained to improve your strength through many",
+    },
+    {
+      logo: clinic2,
+      title: "Pathology Clinic",
+      description:
+        "It is a long established fact that a reader will be distracted by",
+    },
+    {
+      logo: clinic3,
+      title: "Patliartic Clinic",
+      description:
+        "When looking at its layout. The point of using Lorem Ipsum is that it.",
+    },
+    {
+      logo: clinic4,
+      title: "Health Clinic",
+      description:
+        "This program is designec for those who exercises only for Their weight.",
+    },
+  ];
+
+  return (
+    <section className="h-screen snap-start flex flex-col justify-center items-center">
+      <div
+        className={`flex w-[90%] h-[50%] rounded-4xl px-24 mt-16`}
+        style={{ backgroundImage: `url(${backgroundServices})` }}
+      >
+        <div className="flex items-center mb-40 gap-8">
+          <h1 className="text-white text-[2.5rem] font-bold w-[25%]">
+            Services For Your Health
+          </h1>
+          <p className="mr-30 ml-4 w-[60ch] text-[#f5f5f5]">
+            We provide you with the following services, following the
+            information pick your best option.
+          </p>
+          <button className="bg-white font-medium py-4 rounded-lg w-[30%] text-[#808080]">
+            Book an Appointment
+          </button>
+        </div>
+      </div>
+      <ListServices servicesList={servicesList} />
+    </section>
   );
 }
 
@@ -128,6 +205,7 @@ export default function App() {
     <div className="h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
       <Header />
       <Solutions />
+      <Services />
     </div>
   );
 }
