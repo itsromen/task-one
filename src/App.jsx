@@ -28,9 +28,9 @@ function HeroText() {
   return (
     <div className="mix-blend-screen leading-tight absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
       <span className="pl-24">I AM</span>
-      <span className="text-[12rem] font-bold block text-white/90">TURA</span>
-      <span className="pl-72 block">A JUNIOR</span>
-      <span className="pl-72">WEB DESIGNER</span>
+      <span className="text-[12rem] font-bold block text-white/90">ROMEN</span>
+      <span className="pl-108 block">A JUNIOR</span>
+      <span className="pl-108">WEB DESIGNER</span>
     </div>
   );
 }
@@ -242,7 +242,7 @@ function CreateInput(props) {
       })}
       <button
         type="submit"
-        className="mt-12 w-[50%] rounded-md py-4 self-center shadow-[15px_9px_-1px_1px_rgba(0,0,0,0.7)]"
+        className="mt-12 w-[50%] rounded-md py-4 self-center shadow-[9px_9px_15px_1px_rgba(0,0,0,0.7)]"
       >
         Send Message &#8594;
       </button>
