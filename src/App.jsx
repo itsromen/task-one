@@ -281,7 +281,7 @@ function CreateInput(props) {
       })}
       <button
         type="submit"
-        className="mt-4 sm:mt-12 sm:w-[50%] rounded-md py-4 self-center shadow-[9px_9px_15px_1px_rgba(0,0,0,0.7)]"
+        className="mt-4 sm:mt-12 w-[70%] sm:w-[50%] rounded-md py-4 self-center shadow-[9px_9px_15px_1px_rgba(0,0,0,0.7)]"
       >
         Send Message &#8594;
       </button>
