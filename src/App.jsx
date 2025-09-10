@@ -213,7 +213,7 @@ function Services() {
         style={{ backgroundImage: `url(${backgroundServices})` }}
       >
         <div className="flex max-sm:flex-col sm:items-center max-sm:text-center mb-40 gap-8">
-          <h1 className="max-sm:pt-8 text-white text-[2.5rem] max-sm:text-[1.75rem] max-[25rem]:text-[1.5rem] font-bold sm:w-[25%]">
+          <h1 className="max-sm:pt-8 text-white text-[2.5rem] max-sm:text-[1.75rem] font-bold sm:w-[25%]">
             Services For Your Health
           </h1>
           <p className="sm:mr-30 sm:ml-4 sm:w-[60ch] text-[#f5f5f5] max-[25rem]:hidden">
