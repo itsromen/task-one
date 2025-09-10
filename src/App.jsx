@@ -43,7 +43,7 @@ function HeroText() {
 
 function Socials() {
   return (
-    <ul className="flex flex-col gap-2 px-8 absolute bottom-4 invert">
+    <ul className="flex flex-col max-[25rem]:flex-row gap-2 px-8 max-[25rem]:justify-self-center absolute bottom-4 invert">
       <li>
         <a href="#">
           <img src={facebook} alt="Facebook" width="24px" />
@@ -120,10 +120,16 @@ function SolutionsInfo() {
       </div>
       <ListProcess process={process} />
       <div className="flex gap-8 mt-4">
-        <button className="text-white bg-[#2d70a8] px-[2.5em] py-1 border-[#2d70a8] border-4 rounded-full text-[0.875em]">
+        <button
+          type="button"
+          className="text-white bg-[#2d70a8] px-[2.5em] py-1 border-[#2d70a8] border-4 rounded-full text-[0.875em]"
+        >
           Get Started
         </button>
-        <button className="text-[#2d70a8] px-[2.5em] py-1 border-[#2d70a8] border-4 rounded-full text-2 text-[0.875em]">
+        <button
+          type="button"
+          className="text-[#2d70a8] px-[2.5em] py-1 border-[#2d70a8] border-4 rounded-full text-2 text-[0.875em]"
+        >
           Read More
         </button>
       </div>
@@ -147,7 +153,7 @@ function Solutions() {
 
 function ListServices(props) {
   return (
-    <div className="cardsContainer flex max-sm:flex-wrap w-[80%] gap-16 justify-center relative bottom-32">
+    <div className="cardsContainer flex max-sm:flex-wrap w-[80%] max-[25rem]:w-[90%] gap-16 max-sm:gap-10 max-[25rem]:gap-4 justify-center relative bottom-32">
       {props.servicesList.map((service) => {
         return (
           <div
@@ -159,7 +165,9 @@ function ListServices(props) {
               alt={`${service.title} Image`}
               width="48px;"
             />
-            <h3 className="font-medium">{service.title}</h3>
+            <h3 className="font-medium max-[25rem]:text-[0.875rem]">
+              {service.title}
+            </h3>
             <p className="text-[#adaaaa] max-sm:hidden">
               {service.description}
             </p>
@@ -205,20 +213,26 @@ function Services() {
         style={{ backgroundImage: `url(${backgroundServices})` }}
       >
         <div className="flex max-sm:flex-col sm:items-center max-sm:text-center mb-40 gap-8">
-          <h1 className="max-sm:pt-8 text-white text-[2.5rem] max-sm:text-[1.75rem] font-bold sm:w-[25%]">
+          <h1 className="max-sm:pt-8 text-white text-[2.5rem] max-sm:text-[1.75rem] max-[25rem]:text-[1.5rem] font-bold sm:w-[25%]">
             Services For Your Health
           </h1>
-          <p className="sm:mr-30 sm:ml-4 sm:w-[60ch] text-[#f5f5f5]">
+          <p className="sm:mr-30 sm:ml-4 sm:w-[60ch] text-[#f5f5f5] max-[25rem]:hidden">
             We provide you with the following services, following the
             information pick your best option.
           </p>
-          <button className="max-sm:hidden bg-white font-medium py-4 rounded-lg w-[30%] text-[#808080]">
+          <button
+            type="button"
+            className="max-sm:hidden bg-white font-medium py-4 rounded-lg w-[30%] text-[#808080]"
+          >
             Book an Appointment
           </button>
         </div>
       </div>
       <ListServices servicesList={servicesList} />
-      <button className="bg-[#e87d1a] relative bottom-[64px] font-medium max-sm:px-6 py-4 rounded-lg sm:w-[30%] text-[white] sm:hidden">
+      <button
+        type="button"
+        className="bg-[#e87d1a] relative bottom-[64px] font-medium max-sm:px-6 py-4 rounded-lg sm:w-[30%] text-[white] sm:hidden"
+      >
         Book an Appointment
       </button>
     </section>
@@ -227,7 +241,7 @@ function Services() {
 
 function ContactInfo() {
   return (
-    <div className="flex-auto text-center flex flex-col items-center text-[0.875rem] sm:text-[1rem]">
+    <div className="flex-auto text-center flex flex-col items-center text-[0.875rem] sm:text-[1rem] max-[25rem]:mt-8">
       <h1 className="max-sm:hidden text-[3em] font-medium sm:mb-12 uppercase leading-none">
         Contact
       </h1>
@@ -297,7 +311,7 @@ function Contact() {
   return (
     <section className="relative text-white/80  h-screen snap-start bg-[radial-gradient(circle_at_35%_25%,#505050_0%,#505050_5%,#141414_60%,black_100%)]">
       <Navbar />
-      <div className="sm:px-32 w-[100%] max-sm:w-[80%] flex max-sm:flex-wrap max-sm:gap-8 sm:gap-32 items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+      <div className="sm:px-32 w-[100%] max-sm:w-[80%] flex max-sm:flex-wrap max-sm:gap-8 max-[25rem]:gap-2 sm:gap-32 items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
         <ContactInfo />
         <ContactForm />
       </div>
