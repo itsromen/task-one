@@ -65,7 +65,7 @@ function Socials() {
 
 function Header() {
   return (
-    <header className="relative text-white/80  h-screen snap-start bg-[radial-gradient(circle_at_35%_25%,#505050_0%,#505050_5%,#141414_60%,black_100%)]">
+    <header className="relative text-white/80  h-dvh sm:h-screen snap-start bg-[radial-gradient(circle_at_35%_25%,#505050_0%,#505050_5%,#141414_60%,black_100%)]">
       <Navbar />
       <HeroText />
       <Socials />
@@ -139,7 +139,7 @@ function SolutionsInfo() {
 
 function Solutions() {
   return (
-    <section className="h-screen snap-start bg-[#faeee1] flex items-center justify-center">
+    <section className="h-dvh sm:h-screen snap-start bg-[#faeee1] flex items-center justify-center">
       <img
         src={man_chatting}
         alt="random dude"
@@ -207,7 +207,7 @@ function Services() {
   ];
 
   return (
-    <section className="h-screen snap-start flex flex-col justify-center items-center">
+    <section className="h-dvh sm:h-screen snap-start flex flex-col justify-center items-center">
       <div
         className={`flex w-[90%] h-[50%] rounded-4xl px-24 mt-16`}
         style={{ backgroundImage: `url(${backgroundServices})` }}
@@ -309,7 +309,7 @@ function ContactForm() {
 
 function Contact() {
   return (
-    <section className="relative text-white/80  h-screen snap-start bg-[radial-gradient(circle_at_35%_25%,#505050_0%,#505050_5%,#141414_60%,black_100%)]">
+    <section className="relative text-white/80 h-dvh sm:h-screen snap-start bg-[radial-gradient(circle_at_35%_25%,#505050_0%,#505050_5%,#141414_60%,black_100%)]">
       <Navbar />
       <div className="sm:px-32 w-[100%] max-sm:w-[80%] flex max-sm:flex-wrap max-sm:gap-8 max-[25rem]:gap-2 sm:gap-32 items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
         <ContactInfo />
@@ -322,7 +322,7 @@ function Contact() {
 
 export default function App() {
   return (
-    <div className="h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+    <div className="h-dvh sm:h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
       <Header />
       <Solutions />
       <Services />
